@@ -22,36 +22,57 @@ export const columns: ColumnDef<User>[] = [
         onChange={row.getToggleSelectedHandler()}
       />
     ),
+    meta: {
+      title: "Checkbox",
+    },
   },
   {
     id: "firstName",
     accessorKey: "firstName",
     header: ({ column }) => <ColHeader column={column} title="First Name" />,
     cell: ({ row }: any) => <Text>{row.getValue("firstName")}</Text>,
+    meta: {
+      title: "First Name",
+    },
   },
   {
     id: "lastName",
     accessorKey: "lastName",
     header: ({ column }) => <ColHeader column={column} title="Last Name" />,
+    meta: {
+      title: "Last Name",
+    },
   },
   {
     id: "age",
     accessorKey: "age",
     header: ({ column }) => <ColHeader column={column} title="Age" />,
+    meta: {
+      title: "Age",
+    },
   },
   {
     id: "visits",
     accessorKey: "visits",
     header: ({ column }) => <ColHeader column={column} title="Visits" />,
+    meta: {
+      title: "Visits",
+    },
   },
   {
     id: "progress",
     accessorKey: "progress",
     header: ({ column }) => <ColHeader column={column} title="Progress" />,
+    meta: {
+      title: "Progress",
+    },
   },
   {
     id: "actions",
     header: "Actions",
     cell: () => <RowActions />,
+    meta: {
+      title: "Actions",
+    },
   },
 ];

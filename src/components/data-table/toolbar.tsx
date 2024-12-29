@@ -90,36 +90,6 @@ export function Toolbar({
         <Group p="sm" mt="sm" gap="sm" className={classes.actions}>
           {tableActions}
 
-          {/* <CustomDropdownSelect
-            triggerCmp={
-              <Button
-                variant="default"
-                size="xs"
-                leftSection={<IconArrowsDownUp size={15} />}
-              >
-                Sort
-              </Button>
-            }
-            dropdownCmp={
-              <Stack>
-                {table.getAllColumns().map((column: any) => (
-                  <Group key={column.id} className={classes.column}>
-                    <Checkbox
-                      size="xs"
-                      label={
-                        typeof column.columnDef.header === "string"
-                          ? column.columnDef.header
-                          : "Selector"
-                      }
-                      onChange={column.getToggleVisibilityHandler()}
-                      checked={column.getIsVisible()}
-                    />
-                  </Group>
-                ))}
-              </Stack>
-            }
-          /> */}
-
           <CustomDropdownSelect
             triggerCmp={
               <Button
@@ -132,22 +102,16 @@ export function Toolbar({
             }
             dropdownCmp={
               <Stack>
-                {table.getAllColumns().map((column: any) => {
-                  return (
-                    <Box key={column.id} className={classes.column}>
-                      <Checkbox
-                        size="xs"
-                        label={
-                          typeof column.columnDef.header === "string"
-                            ? column.columnDef.header
-                            : "Selector"
-                        }
-                        onChange={column.getToggleVisibilityHandler()}
-                        checked={column.getIsVisible()}
-                      />
-                    </Box>
-                  );
-                })}
+                {table.getAllColumns().map((column: any) => (
+                  <Box key={column.id} className={classes.column}>
+                    <Checkbox
+                      size="xs"
+                      label={column.columnDef.meta?.title}
+                      onChange={column.getToggleVisibilityHandler()}
+                      checked={column.getIsVisible()}
+                    />
+                  </Box>
+                ))}
               </Stack>
             }
           />

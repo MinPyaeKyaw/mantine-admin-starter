@@ -11,6 +11,14 @@ export function ColHeader<TData, TValue>({
   column,
   title,
 }: Props<TData, TValue>) {
+  if (!column.getCanSort()) {
+    return (
+      <Text size="sm" fw="bold">
+        {title}
+      </Text>
+    );
+  }
+
   return (
     <Group w="100%" gap="xs">
       <Text size="sm" fw="bold">
@@ -25,7 +33,7 @@ export function ColHeader<TData, TValue>({
             variant="subtle"
             aria-label="Settings"
           >
-            <IconArrowUp size={12} />
+            <IconArrowDown size={12} />
           </ActionIcon>
         </Tooltip>
       ) : (
@@ -36,7 +44,7 @@ export function ColHeader<TData, TValue>({
             variant="subtle"
             aria-label="Settings"
           >
-            <IconArrowDown size={12} />
+            <IconArrowUp size={12} />
           </ActionIcon>
         </Tooltip>
       )}
