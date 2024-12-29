@@ -1,0 +1,16 @@
+.pinned {
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-6)
+  );
+  position: sticky;
+  z-index: 1;
+}
+
+.leftPinnedCol {
+  left: 0;
+}
+
+.rightPinnedCol {
+  right: 0;
+}
