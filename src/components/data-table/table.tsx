@@ -4,6 +4,8 @@ import {
   flexRender,
   TableOptions,
   getPaginationRowModel,
+  SortingState,
+  OnChangeFn,
 } from "@tanstack/react-table";
 import { Box, ScrollArea, Table, TableProps } from "@mantine/core";
 import { Dispatch, ReactNode, SetStateAction } from "react";
@@ -21,6 +23,7 @@ interface Props {
   tableFilters?: ReactNode;
   isLoading?: boolean;
   onPaginationChange: Dispatch<SetStateAction<PaginationType>>;
+  onSortingChange: OnChangeFn<SortingState>;
   options?: Omit<
     TableOptions<any>,
     | "getCoreRowModel"
@@ -39,6 +42,7 @@ export function DataTable({
   tableFilters,
   isLoading = false,
   onPaginationChange,
+  onSortingChange,
   options,
   ...props
 }: Props & TableProps) {
@@ -49,10 +53,9 @@ export function DataTable({
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onPaginationChange,
+    onSortingChange,
     ...options,
   });
-
-  console.log("sorting", table.getState().sorting);
 
   return (
     <Box>

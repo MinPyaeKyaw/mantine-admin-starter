@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "@mantine/core";
 import {
-  IconArrowsDownUp,
+  // IconArrowsDownUp,
   IconChevronDown,
   IconSelector,
 } from "@tabler/icons-react";
@@ -90,7 +90,7 @@ export function Toolbar({
         <Group p="sm" mt="sm" gap="sm" className={classes.actions}>
           {tableActions}
 
-          <CustomDropdownSelect
+          {/* <CustomDropdownSelect
             triggerCmp={
               <Button
                 variant="default"
@@ -102,25 +102,23 @@ export function Toolbar({
             }
             dropdownCmp={
               <Stack>
-                {table.getAllColumns().map((column: any) => {
-                  return (
-                    <Box key={column.id} className={classes.column}>
-                      <Checkbox
-                        size="xs"
-                        label={
-                          typeof column.columnDef.header === "string"
-                            ? column.columnDef.header
-                            : "Selector"
-                        }
-                        onChange={column.getToggleVisibilityHandler()}
-                        checked={column.getIsVisible()}
-                      />
-                    </Box>
-                  );
-                })}
+                {table.getAllColumns().map((column: any) => (
+                  <Group key={column.id} className={classes.column}>
+                    <Checkbox
+                      size="xs"
+                      label={
+                        typeof column.columnDef.header === "string"
+                          ? column.columnDef.header
+                          : "Selector"
+                      }
+                      onChange={column.getToggleVisibilityHandler()}
+                      checked={column.getIsVisible()}
+                    />
+                  </Group>
+                ))}
               </Stack>
             }
-          />
+          /> */}
 
           <CustomDropdownSelect
             triggerCmp={

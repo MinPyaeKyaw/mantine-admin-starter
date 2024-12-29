@@ -1,6 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { RowActions } from "./row-actions";
-import { Checkbox } from "@mantine/core";
+import { Checkbox, Text } from "@mantine/core";
+import { ColHeader } from "@components/data-table/col-header";
 
 export const columns: ColumnDef<User>[] = [
   {
@@ -25,27 +26,28 @@ export const columns: ColumnDef<User>[] = [
   {
     id: "firstName",
     accessorKey: "firstName",
-    header: "First Name",
+    header: ({ column }) => <ColHeader column={column} title="First Name" />,
+    cell: ({ row }: any) => <Text>{row.getValue("firstName")}</Text>,
   },
   {
     id: "lastName",
     accessorKey: "lastName",
-    header: "Last Name",
+    header: ({ column }) => <ColHeader column={column} title="Last Name" />,
   },
   {
     id: "age",
     accessorKey: "age",
-    header: "Age",
+    header: ({ column }) => <ColHeader column={column} title="Age" />,
   },
   {
     id: "visits",
     accessorKey: "visits",
-    header: "Visits",
+    header: ({ column }) => <ColHeader column={column} title="Visits" />,
   },
   {
     id: "progress",
     accessorKey: "progress",
-    header: "Progress",
+    header: ({ column }) => <ColHeader column={column} title="Progress" />,
   },
   {
     id: "actions",

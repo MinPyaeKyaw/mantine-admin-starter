@@ -19,14 +19,14 @@ export function UserCard({ user }: Props) {
         <Group gap="lg">
           <Group gap="xs">
             <ThemeIcon variant="light" c="primary" size="sm">
-              <IconOld size={18} />
+              <IconOld size={13} />
             </ThemeIcon>
             <Text size="sm">Age: {user.age}</Text>
           </Group>
 
           <Group gap="xs">
             <ThemeIcon variant="light" c="primary" size="sm">
-              <IconHeartSpark size={18} />
+              <IconHeartSpark size={13} />
             </ThemeIcon>
             <Text size="sm">Status: {user.status}</Text>
           </Group>

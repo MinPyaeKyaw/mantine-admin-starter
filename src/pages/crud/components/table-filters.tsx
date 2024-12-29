@@ -1,6 +1,5 @@
 import { Button, Group, TextInput } from "@mantine/core";
 import {
-  IconArrowsDownUp,
   IconPlus,
   IconReportAnalytics,
   IconSearch,
@@ -15,14 +14,6 @@ export function TableFilters() {
         placeholder="Search..."
         leftSection={<IconSearch size={15} />}
       />
-
-      <Button
-        variant="default"
-        size="xs"
-        leftSection={<IconArrowsDownUp size={15} />}
-      >
-        Sort
-      </Button>
 
       <Button
         variant="default"
