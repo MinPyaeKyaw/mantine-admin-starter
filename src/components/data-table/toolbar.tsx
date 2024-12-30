@@ -87,7 +87,7 @@ export function Toolbar({
       </Box>
 
       <Collapse in={actionOpened}>
-        <Group p="sm" mt="sm" gap="sm" className={classes.actions}>
+        <Group p="sm" gap="sm" className={classes.actions}>
           {tableActions}
 
           <CustomDropdownSelect
@@ -119,7 +119,7 @@ export function Toolbar({
       </Collapse>
 
       <Collapse in={filterOpened}>
-        <Group p="sm" mt="sm" gap="sm" className={classes.actions}>
+        <Group p="sm" gap="sm" className={classes.actions}>
           {tableFilters}
         </Group>
       </Collapse>
