@@ -17,8 +17,6 @@ export function TableViewPage() {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
 
-  console.log(rowSelection);
-
   return (
     <Stack>
       <PageTitle
@@ -33,7 +31,7 @@ export function TableViewPage() {
           totalRowCount={tableData.length}
           onPaginationChange={setPaginationState}
           onSortingChange={setSorting}
-          tableActions={<TableActions />}
+          tableActions={<TableActions selectedRows={rowSelection} />}
           tableFilters={<TableFilters />}
           options={{
             state: {

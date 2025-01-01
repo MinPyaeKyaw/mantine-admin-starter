@@ -3,8 +3,18 @@ import { IconPlus, IconReportAnalytics, IconTrash } from "@tabler/icons-react";
 import { modals } from "@mantine/modals";
 import CreateModal from "./create-modal";
 import InvalidDeleteModal from "@components/modals/invalid-delete-modal";
+import { RowSelectionState } from "@tanstack/react-table";
+import DeleteModal from "./delete-modal";
 
-export function TableActions() {
+interface Props {
+  selectedRows: RowSelectionState;
+}
+
+export function TableActions({ selectedRows }: Props) {
+  const getSelectedRowIds = (): string[] => {
+    return Object.keys(selectedRows);
+  };
+
   const handleCreateClick = () =>
     modals.open({
       withCloseButton: false,
@@ -12,10 +22,19 @@ export function TableActions() {
     });
 
   const handleConfirmDelete = () => {
-    modals.open({
-      withCloseButton: false,
-      children: <InvalidDeleteModal />,
-    });
+    const rowIds = getSelectedRowIds();
+
+    if (!rowIds.length) {
+      modals.open({
+        withCloseButton: false,
+        children: <InvalidDeleteModal />,
+      });
+    } else {
+      modals.open({
+        withCloseButton: false,
+        children: <DeleteModal />,
+      });
+    }
   };
 
   return (
