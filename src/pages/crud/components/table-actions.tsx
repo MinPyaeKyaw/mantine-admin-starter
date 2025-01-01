@@ -4,7 +4,7 @@ import { modals } from "@mantine/modals";
 import CreateModal from "./create-modal";
 import InvalidDeleteModal from "@components/modals/invalid-delete-modal";
 import { RowSelectionState } from "@tanstack/react-table";
-import DeleteModal from "./delete-modal";
+import ConfirmDeleteModal from "./confirm-delete-modal";
 
 interface Props {
   selectedRows: RowSelectionState;
@@ -32,7 +32,7 @@ export function TableActions({ selectedRows }: Props) {
     } else {
       modals.open({
         withCloseButton: false,
-        children: <DeleteModal />,
+        children: <ConfirmDeleteModal />,
       });
     }
   };

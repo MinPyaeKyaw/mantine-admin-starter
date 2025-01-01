@@ -36,12 +36,18 @@
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 
   @mixin hover {
-    color: var(--mantine-color-primary-6);
+    color: light-dark(
+      var(--mantine-color-primary-6),
+      var(--mantine-color-primary-6)
+    );
   }
 }
 
 .activeLink {
-  color: var(--mantine-color-primary-6);
+  color: light-dark(
+    var(--mantine-color-primary-6),
+    var(--mantine-color-primary-6)
+  );
 }
 
 .chevron {
