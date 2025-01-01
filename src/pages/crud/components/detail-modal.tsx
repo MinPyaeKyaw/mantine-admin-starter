@@ -14,7 +14,7 @@ export function DetailModal({ data }: Props) {
 
       <Divider />
 
-      <SimpleGrid spacing="sm" mt="sm">
+      <SimpleGrid cols={2} spacing="sm" mt="sm">
         <LabelValue label="ID" value={data.id} direction="vertical" />
         <LabelValue
           label="First Name"

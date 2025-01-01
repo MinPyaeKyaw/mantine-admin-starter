@@ -9,8 +9,10 @@ interface Props {
 export function LabelValue({ label, value, direction = "horizontal" }: Props) {
   return (
     <Flex direction={direction === "vertical" ? "column" : "row"}>
-      <Text>{label}</Text>
-      <Text>{value}</Text>
+      <Text size="xs" c="gray">
+        {label}
+      </Text>
+      <Text c="primary">{value}</Text>
     </Flex>
   );
 }
