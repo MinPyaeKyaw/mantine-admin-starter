@@ -1,10 +1,10 @@
 import { Button, Group } from "@mantine/core";
 import { IconPlus, IconReportAnalytics, IconTrash } from "@tabler/icons-react";
 import { modals } from "@mantine/modals";
-import CreateModal from "./create-modal";
 import InvalidDeleteModal from "@components/modals/invalid-delete-modal";
 import { RowSelectionState } from "@tanstack/react-table";
-import ConfirmDeleteModal from "./confirm-delete-modal";
+import CreateModal from "./create-modal";
+import ConfirmDeleteModal from "@components/modals/confirm-delete-modal";
 
 interface Props {
   selectedRows: RowSelectionState;
@@ -32,7 +32,13 @@ export function TableActions({ selectedRows }: Props) {
     } else {
       modals.open({
         withCloseButton: false,
-        children: <ConfirmDeleteModal />,
+        children: (
+          <ConfirmDeleteModal
+            rowIds={rowIds}
+            onDelete={() => console.log("delete")}
+            onCancel={() => console.log("cancel")}
+          />
+        ),
       });
     }
   };

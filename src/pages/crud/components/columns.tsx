@@ -70,7 +70,7 @@ export const columns: ColumnDef<User>[] = [
   {
     id: "actions",
     header: "Actions",
-    cell: () => <RowActions />,
+    cell: ({ row }) => <RowActions row={row.original} />,
     meta: {
       title: "Actions",
     },
