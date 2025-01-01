@@ -7,7 +7,7 @@ import { useState } from "react";
 import { TableActions } from "./components/table-actions";
 import { TableFilters } from "./components/table-filters";
 import { PageTitle } from "@components/ui/page-title";
-import { SortingState } from "@tanstack/react-table";
+import { RowSelectionState, SortingState } from "@tanstack/react-table";
 
 export function TableViewPage() {
   const [paginationState, setPaginationState] = useState<PaginationType>({
@@ -15,6 +15,9 @@ export function TableViewPage() {
     pageSize: 10,
   });
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+
+  console.log(rowSelection);
 
   return (
     <Stack>
@@ -36,8 +39,11 @@ export function TableViewPage() {
             state: {
               pagination: paginationState,
               sorting,
+              rowSelection,
             },
             manualSorting: true,
+            getRowId: (row) => row.id,
+            onRowSelectionChange: setRowSelection,
           }}
           highlightOnHover
           verticalSpacing="sm"

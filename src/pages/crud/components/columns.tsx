@@ -30,7 +30,7 @@ export const columns: ColumnDef<User>[] = [
     id: "firstName",
     accessorKey: "firstName",
     header: ({ column }) => <ColHeader column={column} title="First Name" />,
-    cell: ({ row }: any) => <Text>{row.getValue("firstName")}</Text>,
+    cell: ({ row }: any) => <Text size="sm">{row.getValue("firstName")}</Text>,
     meta: {
       title: "First Name",
     },

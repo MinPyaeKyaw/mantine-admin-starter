@@ -10,7 +10,17 @@ interface Props {
 function ThemeProvider({ children }: Props) {
   return (
     <MantineProvider theme={theme}>
-      <ModalsProvider>{children}</ModalsProvider>
+      <ModalsProvider
+        modalProps={{
+          centered: true,
+          padding: 0,
+          shadow: "xs",
+          size: "md",
+          radius: "md",
+        }}
+      >
+        {children}
+      </ModalsProvider>
     </MantineProvider>
   );
 }

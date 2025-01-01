@@ -11,7 +11,6 @@ export * from "./profile/update";
 export * from "./crud/table-view";
 export * from "./crud/card-view";
 export * from "./crud/update";
-export * from "./crud/create";
 
 export * from "./settings/page";
 export * from "./on-progress/page";

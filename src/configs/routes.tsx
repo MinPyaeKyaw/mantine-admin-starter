@@ -2,7 +2,6 @@ import { AuthLayout, DashboardLayout, RootLayout } from "@layouts/index";
 import { ContactUsPage } from "@pages/form/contact-us";
 import {
   CardViewPage,
-  CreatePage,
   Dashboard,
   Err401,
   Err404,
@@ -83,10 +82,6 @@ const router = createBrowserRouter([
           {
             path: "crud/card-view",
             element: <CardViewPage />,
-          },
-          {
-            path: "crud/create",
-            element: <CreatePage />,
           },
           {
             path: "crud/:id/update",

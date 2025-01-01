@@ -8,16 +8,11 @@ import {
   Stack,
   Checkbox,
 } from "@mantine/core";
-import {
-  // IconArrowsDownUp,
-  IconChevronDown,
-  IconSelector,
-} from "@tabler/icons-react";
+import { IconChevronDown, IconSelector } from "@tabler/icons-react";
 import { Dispatch, ReactNode, SetStateAction } from "react";
-// import { ColVisibleSelect } from "./col-visible-select";
 import classes from "./toolbar.module.css";
 import { useDisclosure } from "@mantine/hooks";
-import { CustomDropdownSelect } from "@components/modals/custom-dropdown-select";
+import { CustomDropdownSelect } from "@components/inputs/custom-dropdown-select";
 
 interface Props {
   tableActions?: ReactNode;
